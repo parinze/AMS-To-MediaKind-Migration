@@ -1,0 +1,129 @@
+AMS to MediaKind Migration
+
+https://api.mk.io/auth/token/
+
+DEV:
+az account set --subscription dolphin-dev1
+
+SAS: https://dolphmediastorage301.blob.core.windows.net/?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2025-06-28T00:40:56Z&st=2024-06-27T16:40:56Z&spr=https&sig=kpYbBxxp4fj%2FFTjNytDdiXlCHEW2nrLAIT1O2rRYjJI%3D
+
+mkio-ams-migration.exe --azure-subscription 8266c3ac-eb1a-4ec8-90c7-683dcda54b94 --azure-resource-group US-N-DOLPH-RSG-OAHU-301 --azure-account-name dolphmediasvc301 --mediakind-import-subscription dolphmediasvc301_dev --export --import --assets --streaming-locators --asset-filters --content-key-policies
+
+Content Key Policy: DRMContentKeyPolicy
+- PlayReady
+    - Issuer: https://test-platform-token-api.practicemgmt-test.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: ZjJaZitrbnFvZWxBbWpReXdVd2l2N2lTVzg1QjlrT3lZYVoxVHFJOA==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+- Widevine
+    - Issuer: https://test-platform-token-api.practicemgmt-test.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: ZjJaZitrbnFvZWxBbWpReXdVd2l2N2lTVzg1QjlrT3lZYVoxVHFJOA==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+    - Template: {
+    "allowed_track_types": "SD_HD",
+    "content_key_specs": [
+        {
+            "track_type": "SD",
+            "security_level": 1,
+            "required_output_protection": {
+                "hdcp": "HDCP_NONE",
+                "cgms_flags": null
+            }
+        }
+    ],
+    "policy_overrides": {
+        "can_play": true,
+        "can_persist": true,
+        "can_renew": false,
+        "rental_duration_seconds": 2592000,
+        "playback_duration_seconds": 10800,
+        "license_duration_seconds": 604800
+    }
+}
+
+*************************************
+
+
+QA:
+az account set --subscription dolphin-qa1
+
+SAS: https://dolphmediastorage101.blob.core.windows.net/?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2025-06-28T01:03:56Z&st=2024-06-27T17:03:56Z&spr=https&sig=ahI%2F9naO6GwrawxeBDvoemet0ZmZAamypnn1WO2I0Os%3D
+
+mkio-ams-migration.exe --azure-subscription 86d62f52-5ef8-4752-a0bc-6906905668ad --azure-resource-group US-N-DOLPH-RSG-OAHU-101 --azure-account-name dolphmediasvc101 --mediakind-import-subscription dolphmediasvc101_qa --export --import --assets --streaming-locators --asset-filters --content-key-policies
+
+Content Key Policy: DRMContentKeyPolicy
+- PlayReady
+    - Issuer: https://test-platform-token-api.practicemgmt-test.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: ZjJaZitrbnFvZWxBbWpReXdVd2l2N2lTVzg1QjlrT3lZYVoxVHFJOA==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+- Widevine
+    - Issuer: https://test-platform-token-api.practicemgmt-test.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: ZjJaZitrbnFvZWxBbWpReXdVd2l2N2lTVzg1QjlrT3lZYVoxVHFJOA==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+    - Template: {
+    "allowed_track_types": "SD_HD",
+    "content_key_specs": [
+        {
+            "track_type": "SD",
+            "security_level": 1,
+            "required_output_protection": {
+                "hdcp": "HDCP_NONE",
+                "cgms_flags": null
+            }
+        }
+    ],
+    "policy_overrides": {
+        "can_play": true,
+        "can_persist": true,
+        "can_renew": false,
+        "rental_duration_seconds": 2592000,
+        "playback_duration_seconds": 10800,
+        "license_duration_seconds": 604800
+    }
+}
+
+*************************************
+
+
+STAGE:
+az account set --subscription dolphin-stage1
+
+SAS: https://dolphmediastorage201.blob.core.windows.net/?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2025-06-28T01:13:05Z&st=2024-06-27T17:13:05Z&spr=https&sig=SUD2BHNKOymq8b%2Flk3Klh6MuHyuV3LMRrGCciEF8f78%3D
+
+mkio-ams-migration.exe --azure-subscription 7dceef90-f363-4593-b76b-3a593446162b --azure-resource-group US-N-DOLPH-RSG-BLUE-201 --azure-account-name dolphmediasvc201 --mediakind-import-subscription dolphmediasvc201_stage --export --import --assets --streaming-locators --asset-filters --content-key-policies
+
+Content Key Policy: DRMContentKeyPolicy
+- PlayReady
+    - Issuer: https://stage-platform-token-api.practicemgmt-stage.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: RShIK01iUWVUaFdtWnE0dDd3IXolQypGKUpATmNSZlVqWG4ycjV1OHgvQT9EKEcrS2FQZFNnVmtZcDNzNnY5eQ==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+- Widevine
+    - Issuer: https://stage-platform-token-api.practicemgmt-stage.pattersondevops.com/sts
+    - Audience: AqDrmAudience
+    - Primary Verification Key: RShIK01iUWVUaFdtWnE0dDd3IXolQypGKUpATmNSZlVqWG4ycjV1OHgvQT9EKEcrS2FQZFNnVmtZcDNzNnY5eQ==
+    - Custom Claims: urn:microsoft:azure:mediaservices:contentkeyidentifier
+    - Template: {
+    "allowed_track_types": "SD_HD",
+    "content_key_specs": [
+        {
+            "track_type": "SD",
+            "security_level": 1,
+            "required_output_protection": {
+                "hdcp": "HDCP_NONE",
+                "cgms_flags": null
+            }
+        }
+    ],
+    "policy_overrides": {
+        "can_play": true,
+        "can_persist": true,
+        "can_renew": false,
+        "rental_duration_seconds": 2592000,
+        "playback_duration_seconds": 10800,
+        "license_duration_seconds": 604800
+    }
+}

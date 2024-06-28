@@ -1,0 +1,54 @@
+PlayReady: https://ottapp-appgw-amp.prodc.mkio.tv3cloud.com/drm/playready-license?ownerUid=azuki
+Widevine: https://ottapp-appgw-amp.prodc.mkio.tv3cloud.com/drm/widevine-license?ownerUid=azuki
+
+{"Authorization":"Bearer=<jwtToken>"}
+
+***2X4 Appliance (Intrusion)***
+
+DEV
+Asset: output-7a9f22758a6b4921a5aaaf36722d5231
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc301-dev
+DASH: /b6e1aea5-fd78-4dc7-b529-404ed3f9fc0c/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /b6e1aea5-fd78-4dc7-b529-404ed3f9fc0c/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: 95929144-9022-4c24-8e85-77155252c64d
+
+QA
+Asset: output-f772958b40034d3e9efba45c34bf7000
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc101-qa
+DASH: /1e062810-c7d6-4890-981f-b3d18e82352c/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /1e062810-c7d6-4890-981f-b3d18e82352c/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: f833ec6a-d81a-42c8-bb87-7ca39ba6d9a9
+
+STAGE
+Asset: output-06ac5ae6d4094ea7ac8dd67a3709ac72
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc201-stage
+DASH: /fb4cf4fb-1f1f-46d0-b5cf-e17adb817bf0/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /fb4cf4fb-1f1f-46d0-b5cf-e17adb817bf0/2x4ApplianceIntrusionTextured_Wa.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: c952864b-fea9-4900-a338-63132ed77a87
+
+
+
+******************************************************
+***3M Treatment Choice Video***
+
+DEV
+Asset: output-a0881ffac4704afab0d361fe51cf7fb6
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc301-dev
+DASH: /ca931a86-1ad2-4707-b464-d615057d240b/3M-AestheticTreatmentChoice.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /ca931a86-1ad2-4707-b464-d615057d240b/3M-AestheticTreatmentChoice.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: 0df7cee7-d1d8-4dd3-af83-18ac0f762daa
+
+
+QA
+Asset: output-db3c2479c3464f2ba948fa1a548d06c5
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc101-qa
+DASH: /2f63af52-17b6-4b36-9acd-5f79337d46fd/3M-AestheticTreatmentChoice.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /2f63af52-17b6-4b36-9acd-5f79337d46fd/3M-AestheticTreatmentChoice.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: 9c951e93-ded5-4053-a77e-ec07be15c9e5
+
+STAGE
+Asset: output-f542c861a5874bfd80265898ed50068e
+Base URL: https://centralus.av.mk.io/default-dolphmediasvc201-stage
+DASH: /1a0fbafa-1230-4ace-b2f0-482ac27deccf/3M-AestheticTreatmentChoice.ism/manifest(format=mpd-time-cmaf,encryption=cenc)
+HLS: /1a0fbafa-1230-4ace-b2f0-482ac27deccf/3M-AestheticTreatmentChoice.ism/manifest(format=m3u8-cmaf,encryption=cenc)
+DRM Key ID: 3a318ede-de07-4aae-b2d4-07f758aa6be5
