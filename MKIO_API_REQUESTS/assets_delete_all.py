@@ -39,10 +39,10 @@ def deleteAllAssets(selectedBaseUrl: str):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python assets_delete_all.py <environmentName: dev | qa | stage>")
+        print("Usage: python assets_delete_all.py <environmentName: dev | qa | stage | prod>")
         sys.exit(1)
-    elif sys.argv[1] not in ["dev", "qa", "stage"]:
-        print("Usage: python assets_delete_all.py <environmentName: dev | qa | stage>")
+    elif sys.argv[1] not in ["dev", "qa", "stage", "prod"]:
+        print("Usage: python assets_delete_all.py <environmentName: dev | qa | stage | prod>")
         sys.exit(1)
 
     environmentName = sys.argv[1]

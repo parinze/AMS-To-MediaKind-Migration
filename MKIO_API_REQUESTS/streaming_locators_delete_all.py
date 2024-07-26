@@ -10,7 +10,7 @@ def deleteAllStreamingLocators(params):
 
     Parameters:
         `params` (namedtuple): available fields -- environment, fileName, contentKeyRestriction, subscriptionName
-            -environment (str): the name of the environment (de, qa, stage)
+            -environment (str): the name of the environment (de, qa, stage, prod)
             -fileName (str): the name of the migration file
             -contentKeyRestriction (dict): the content key restriction information
                     -Issuer (str): the issuer
@@ -50,10 +50,10 @@ def deleteAllStreamingLocators(params):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python delete_all_streaming_locators.py <environmentName: dev | qa | stage>")
+        print("Usage: python delete_all_streaming_locators.py <environmentName: dev | qa | stage | prod>")
         sys.exit(1)
-    elif sys.argv[1] not in ["dev", "qa", "stage"]:
-        print("Usage: python delete_all_streaming_locators.py <environmentName: dev | qa | stage>")
+    elif sys.argv[1] not in ["dev", "qa", "stage", "prod"]:
+        print("Usage: python delete_all_streaming_locators.py <environmentName: dev | qa | stage | prod>")
         sys.exit(1)
 
     environmentName = sys.argv[1]

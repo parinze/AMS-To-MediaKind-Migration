@@ -30,9 +30,15 @@ def setEnvironmentParams(environmentName: str):
         "PrimaryVerificationKey": "RShIK01iUWVUaFdtWnE0dDd3IXolQypGKUpATmNSZlVqWG4ycjV1OHgvQT9EKEcrS2FQZFNnVmtZcDNzNnY5eQ==",
     }
 
+    productionContentKeyRestriction = {
+        "Issuer": "https://prod-pdco-platform-token-api.fuse.pattersondental.com/sts",
+        "PrimaryVerificationKey": "dDZ3OXokQitFKUhATWNRZlRqV25acjR1N3ghQSVEKkYtSmFOZFJnVWtYcDJzNXY4eS9CP0UoSCtLYlBlU2hWbQ=="
+    }
+
     devParams = EnvironmentParams(environment="dev", fileName="DEV_migration-1719511474.json", contentKeyRestriction=devQAContentKeyRestriction, subscriptionName="dolphmediasvc301_dev")
     qaParams = EnvironmentParams(environment="qa", fileName="QA_migration-1719513625.json", contentKeyRestriction=devQAContentKeyRestriction, subscriptionName="dolphmediasvc101_qa")
     stageParams = EnvironmentParams(environment="stage", fileName="STAGE_migration-1719514539.json", contentKeyRestriction=stageContentKeyRestriction, subscriptionName="dolphmediasvc201_stage")
+    prodParams = EnvironmentParams(environment="prod", fileName="PROD_migration-1721748953.json", contentKeyRestriction=productionContentKeyRestriction, subscriptionName="dolphmediasvc001_prod")
 
     selectedParams = None
 
@@ -42,5 +48,9 @@ def setEnvironmentParams(environmentName: str):
         selectedParams = qaParams
     elif environmentName == "stage":
         selectedParams = stageParams
+    elif environmentName == "prod":
+        selectedParams = prodParams
+    else:
+        raise ValueError("Invalid environment name. Please enter 'dev', 'qa', 'stage', or 'prod'.")
 
     return selectedParams
